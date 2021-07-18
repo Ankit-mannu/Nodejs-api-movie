@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazona</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="grid-container">
+        <header class="header">
+            <div class="brand">
+              <button >
+                &#9776;
+              </button>
+              <a href="index.html">amazona</a>
+            </div>
+               <div class="header-links">
+                <a href="cart.html">Cart</a>
+                <a href="signing.html">Sign In</a>
+            </div>
+          </header>
+        <main class="main">
+          <div class="content">
+            <ul class="products">
+
+                <% for(var i=0; i < 12; i++) { %>
+                
+                    <li>
+                        <div class="product">
+                            <img class="product-image"
+                            src=<%= 'http://image.tmdb.org/t/p/w500'+popularMovieData[i].poster_path %>
+                            </ alt="product" loading="lazy">
+                            <div class="product-name">
+                                <a href=<%= 'movie-details/'+popularMovieData[i].id %> >
+                                <%= popularMovieData[i].title %></a>
+                            </div>
+                            <div class="product-brand">Nike</div>
+                            <div class="product-price">$60</div>
+                            <div class="product-rating">4.5 Stars (10 Reviews)</div>
+                        </div>
+                      </li>
+
+                      <% } %>
+
+            </ul>
+        </div>
+        </main>
+        <footer class="footer">
+            All right reserved.
+        </footer>
+    </div>
+    <script>
+        function openMenu() {
+  document.getElementById(".sidebar").clickList.add("open");
+}
+
+/* Set the width of the sidebar to 0 (hide it) */
+function closeNav() {
+  document.getElementById("mySidepanel").style.width = "0";
+}
+    </script>
+</body>
+</html>
